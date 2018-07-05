@@ -4,16 +4,21 @@ import React from 'react';
 /* { name, email } ==> props */
 /* name = props.name */
 /* email = props.email */
-const User = ({ name, email }) => (
+const User = ({ name, email, id }) => (
   /* firstName = props.name.firstName */
-  <div>
-    <h1>
-      Nombre: {name}
-    </h1>
-    <h2>
-      Correo: {email}
-    </h2>
-  </div>
+  <li key={id}>
+    <div>
+      <h1>
+        Nombre: {name}
+      </h1>
+      <h2>
+        Correo: {email}
+      </h2>
+      <h3>
+        ID: {id}
+      </h3>
+    </div>
+  </li>
 );
 
 export default User;

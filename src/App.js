@@ -2,18 +2,18 @@
 import React from 'react';
 
 /* Importaciones de componentes */
-import User from './User';
+import Users from './Users';
 
 const users = [{
-  username: 'lorem uno',
+  name: 'lorem uno',
   id: 1,
   email: 'email@example.com',
 }, {
-  username: 'lorem dos',
+  name: 'lorem dos',
   id: 2,
   email: 'email@example.com',
 }, {
-  username: 'lorem tres',
+  name: 'lorem tres',
   id: 3,
   email: 'email@example.com',
 }];
@@ -24,10 +24,7 @@ const App = () => (
       <h1>Lista de usuarios</h1>
     </header>
     <hr />
-    <User
-      name="Roberto"
-      email="roberto@mail.com"
-    />
+    <Users users={users} />
     <br />
   </div>
 );
