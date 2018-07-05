@@ -2,7 +2,7 @@
 import React from 'react';
 
 /* Importaciones de componentes */
-import Users from './Users';
+import User from './User';
 
 const users = [{
   username: 'lorem uno',
@@ -24,15 +24,11 @@ const App = () => (
       <h1>Lista de usuarios</h1>
     </header>
     <hr />
-    <Users
+    <User
       name="Roberto"
       email="roberto@mail.com"
     />
     <br />
-    <Users
-      name="Eduardo"
-      email="eduardo@mail.com"
-    />
   </div>
 );
 
