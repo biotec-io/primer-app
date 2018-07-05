@@ -19,11 +19,11 @@ const users = [{
 }];
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
+  <div className="uk-container">
+    <header className="uk-text-lead uk-text-center">
       <h1>Lista de usuarios</h1>
     </header>
-    <hr />
+    <br />
     <Users users={users} />
     <br />
   </div>

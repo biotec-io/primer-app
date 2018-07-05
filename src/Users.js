@@ -5,7 +5,7 @@ import React from 'react';
 import User from './User';
 
 const Users = (props) => (
-  <ul>
+  <div className="uk-width-1-1 uk-width-1-3@s">
     {props.users.map(user =>
       <User
         name={user.name}
@@ -13,7 +13,7 @@ const Users = (props) => (
         id={user.id}
       />
     )}
-  </ul>
+  </div>
 );
 
 export default Users;

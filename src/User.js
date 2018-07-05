@@ -6,19 +6,14 @@ import React from 'react';
 /* email = props.email */
 const User = ({ name, email, id }) => (
   /* firstName = props.name.firstName */
-  <li key={id}>
-    <div>
-      <h1>
-        Nombre: {name}
-      </h1>
-      <h2>
-        Correo: {email}
-      </h2>
-      <h3>
-        ID: {id}
-      </h3>
+  <div>
+    <div className="uk-card uk-card-default uk-card-body">
+      <h3 className="uk-card-title">Nombre: {name}</h3>
+      <p><strong>Correo electrónico:</strong> {email}</p>
     </div>
-  </li>
+
+    <br />
+  </div>
 );
 
 export default User;
