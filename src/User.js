@@ -11,8 +11,14 @@ class User extends Component {
     super();
 
     this.state = {
-      text: 'Hola mundo',
+      text: 'No se ha ejecutado ninguna acción',
     };
+  }
+
+  changeText(text) {
+    this.setState({ text });
+    /* Es un atajo de */
+    /* this.setState({ text: text }); */
   }
 
   render() {
@@ -22,14 +28,12 @@ class User extends Component {
           <h3 className="uk-card-title">Nombre: {this.props.name}</h3>
           <p><strong>Correo electrónico:</strong> {this.props.email}</p>
 
-          <p
-            onMouseOver={() => this.setState({
-                text: 'Adiós mundo',
-            })}
+          <button
+            onMouseOver={() => this.changeText('Al entrar el mouse')}
+            onMouseOut={() => this.changeText('Al salir el mouse')}
           >
-            <strong>Texto de estado:</strong>
-            {this.state.text == 'Hola mundo' ? 'No se ha ejecutado mi función' : 'Ya se ejecutó'}
-          </p>
+            {this.state.text}
+          </button>
         </div>
 
         <br />
