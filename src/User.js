@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 /* en este parte utilizamos destructuring */
 /* { name, email } ==> props */
 /* name = props.name */
 /* email = props.email */
 
-/* Componentes Puros o Componentes sin estado */
-const User = ({ name, email, id }) => (
-  /* firstName = props.name.firstName */
-  <div key={id}>
-    <div className="uk-card uk-card-default uk-card-body">
-      <h3 className="uk-card-title">Nombre: {name}</h3>
-      <p><strong>Correo electrónico:</strong> {email}</p>
-    </div>
+/* Componente de Clase o con estado */
+class User extends Component {
+  constructor() {
+    super();
 
-    <br />
-  </div>
-);
+    this.state = {
+      text: 'Hola mundo',
+    };
+  }
+
+  render() {
+    return (
+      <div key={this.props.id}>
+        <div className="uk-card uk-card-default uk-card-body">
+          <h3 className="uk-card-title">Nombre: {this.props.name}</h3>
+          <p><strong>Correo electrónico:</strong> {this.props.email}</p>
+
+          <p
+            onMouseOver={() => this.setState({
+                text: 'Adiós mundo',
+            })}
+          >
+            <strong>Texto de estado:</strong>
+            {this.state.text == 'Hola mundo' ? 'No se ha ejecutado mi función' : 'Ya se ejecutó'}
+          </p>
+        </div>
+
+        <br />
+      </div>
+    );
+  }
+}
 
 export default User;
