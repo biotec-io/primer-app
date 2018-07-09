@@ -6,6 +6,18 @@ import { notification } from 'uikit';
 /* name = props.name */
 /* email = props.email */
 
+const styles = {
+  card: {
+    backgroundColor: '#000000',
+    borderRadius: 10,
+  },
+  cardBlue: {
+    backgroundColor: 'blue',
+    color: '#fefefe',
+    borderRadius: 10,
+  }
+};
+
 /* Componente de Clase o con estado */
 class User extends Component {
   constructor() {
@@ -30,14 +42,20 @@ class User extends Component {
 
   render() {
     return (
-      <div key={this.props.id}>
-        <div className="uk-card uk-card-default uk-card-body">
+      <div
+        key={this.props.id}
+        style={styles.card}
+      >
+        <div className="uk-card uk-card-default uk-card-body"  styles={styles.cardBlue}>
           <h3 className="uk-card-title">Nombre: {this.props.name}</h3>
           <img
             onClick={() => this.triggerNotification(this.props.name)}
             src={this.state.image}
           />
-          <p><strong>Correo electrónico:</strong> {this.props.email}</p>
+          <p>
+            <strong>Correo electrónico:</strong>
+            {this.props.email}
+          </p>
 
           <button
             onMouseOver={() => this.changeText('Al entrar el mouse')}
