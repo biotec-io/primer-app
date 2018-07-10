@@ -1,22 +1,9 @@
 import React, { Component } from 'react';
 import { notification } from 'uikit';
 
-/* en este parte utilizamos destructuring */
-/* { name, email } ==> props */
-/* name = props.name */
-/* email = props.email */
-
-const styles = {
-  card: {
-    backgroundColor: '#000000',
-    borderRadius: 10,
-  },
-  cardBlue: {
-    backgroundColor: 'blue',
-    color: '#fefefe',
-    borderRadius: 10,
-  }
-};
+import './user.css';
+import Button from './Components/Button';
+import ButtonDos from './Components/ButtonDos';
 
 /* Componente de Clase o con estado */
 class User extends Component {
@@ -37,16 +24,18 @@ class User extends Component {
 
   triggerNotification(text) {
     notification(text, { status: 'primary' });
-    this.setState({ image: 'http://via.placeholder.com/200x200?text=Hola+Eduardo' });
+    this.setState({ image: `http://via.placeholder.com/200x200?text=Hola+${text}` });
   }
 
   render() {
     return (
       <div
-        key={this.props.id}
-        style={styles.card}
+        key={this.props.id.toString()}
+        className="black radius"
       >
-        <div className="uk-card uk-card-default uk-card-body"  styles={styles.cardBlue}>
+        <div
+          className="uk-card uk-card-default uk-card-body"
+        >
           <h3 className="uk-card-title">Nombre: {this.props.name}</h3>
           <img
             onClick={() => this.triggerNotification(this.props.name)}
@@ -57,12 +46,18 @@ class User extends Component {
             {this.props.email}
           </p>
 
-          <button
-            onMouseOver={() => this.changeText('Al entrar el mouse')}
-            onMouseOut={() => this.changeText('Al salir el mouse')}
+          <Button
+            onClick={() => this.triggerNotification(this.props.name)}
+            color="blue"
           >
             {this.state.text}
-          </button>
+          </Button>
+
+          <ButtonDos
+            type="danger"
+            text={this.state.text}
+          />
+
         </div>
 
         <br />

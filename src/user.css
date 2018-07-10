@@ -1,0 +1,11 @@
+.black {
+  background-color: #000000;
+}
+
+.radius {
+  border-radius: 10px;
+}
+
+.blue:hover {
+  background-color: blue;
+}
